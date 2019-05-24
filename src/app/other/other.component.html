@@ -1,0 +1,63 @@
+<p>
+  other works!
+</p>
+  <div class="container">
+
+      <!--The content below is only a placeholder and can be replaced.-->
+      <div style="text-align:center">
+        <h1>
+          Welcome to {{ title }}! , {{firstName}} {{lastName}}
+        </h1>
+        
+      </div>
+      
+      <br><hr>
+ 
+      
+      
+      <br><hr>
+      <button class="btn btn-primary"> click </button>
+      
+      <br><hr>
+      <h3 [ngStyle]=" {color: status ? 'green' :  'red' }" > {{firstName}} </h3><br>
+      <h4 [ngClass]="{ isActive: status }" > {{lastName}} </h4>
+      
+      <br><hr>
+      <ul>
+        <li *ngFor="let post of posts; let i = index">{{i + 1}} {{post.title}}</li>
+      </ul>
+      
+      <br><hr>
+      <h2 *ngIf="status; else notActive"> {{ firstName }}</h2>
+      <ng-template #notActive>
+        <p>Not Active</p>
+      
+      </ng-template>
+      
+      <br><hr>
+      <input [(ngModel)]="lastName" type="text"> <br>
+      {{ lastName }}
+      
+      <br><hr>
+      <div (mouseover)="mousingOver()" class="box"></div>
+      
+      <br> <hr>
+      <button (click)='greetPerson()' >click</button>
+      
+      <hr>
+      {{city ? city : 'No City'}}
+      <br>
+      {{ displayName() }}
+      <hr>
+      <label for="status">Active</label>
+      <input type="radio"  id="status" [checked]="status">
+      <!-- {{ getUserStatus() }} -->
+      
+      <br>
+      <hr>
+      <br>
+      <app-example></app-example>
+      
+      <router-outlet></router-outlet>
+      </div>
+
